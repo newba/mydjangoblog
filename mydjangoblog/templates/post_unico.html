@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<title> {% block head_title %} {{ block.super }} | {{ object.titulo }} {% endblock head_title %}</title>
+
+{% block content %}
+    <h1> {{ object.titulo }} </h1>
+    <h4> {{ object.data }} </h4>
+    <p> {{ object.conteudo | safe | linebreaks }} </p>
+{% endblock content %}
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Unico</title>
+</head>
+<body>
+
+    <h1> {{ object.titulo }} </h1>
+    <h4> {{ object.data }} </h4>
+    <p> {{ object.conteudo | safe | linebreaks }} </p>
+
+
+</body>
+</html>
+
+-->

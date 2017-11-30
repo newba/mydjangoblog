@@ -1,0 +1,31 @@
+
+<!-- https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#linebreaks -->
+<!-- https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#safe -->
+{% extends "base.html" %}
+
+{% block content %}
+    {% for object in object_list%}
+       <!-- <a href="/{{ object.id }}/{{ object.slug }}/"> <h1> {{ object.titulo }} </h1> </a> -->
+        <a href="{{ object.get_absolut_url }}"> <h1> {{ object.titulo }} </h1> </a>
+        <h3> {{ object.data }} </h3>
+        <p> {{ object.conteudo | safe | linebreaks | truncatewords_html:80 }} </p>
+    {% endfor %}
+    <div>
+        <!-- https://docs.djangoproject.com/en/1.11/topics/pagination/ -->
+
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">previous page</a>
+        {% endif %}
+
+
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next page</a>
+        {% endif %}
+
+
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+
+h1 {
+    color: green;
+}
+
+h2 {
+    color: red;
+}
+
+p {
+    color: blueviolet;
+}
+
+body {
+    padding-top: 70px;
+}
+
+footer {
+    padding: 40px;
+    background-color: #092e20;
+    text-align: center;
+}
